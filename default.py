@@ -39,7 +39,6 @@ icon          = xbmc.translatePath(os.path.join(home, 'icon.png'))
 addonfanart   = xbmc.translatePath(os.path.join(home, 'fanart.jpg'))
 epgfile       = xbmc.translatePath(os.path.join(home, 'epg.txt'))
 tbarfile      = xbmc.translatePath(os.path.join(home, 'timebar.png'))
-rowsize = 0
 
 
 def log(txt):
@@ -167,6 +166,7 @@ class MyClass(xbmcgui.Window):
     self.buttonList=[]
 
     self.current_page = 0
+    self.rowsize = 0
     self.startPos= 260
 
 
@@ -274,7 +274,7 @@ class MyClass(xbmcgui.Window):
          if row == MAXIMUMROW:
            break
 
-    rowsize = row
+    self.rowsize = row
     self.addControls(self.buttonList)
 
 
@@ -287,7 +287,7 @@ class MyClass(xbmcgui.Window):
        self.last_page=True
 
 
-    for row in range(rowsize):
+    for row in range(self.rowsize):
           for col in range(len(self.button[row])): # added
               if row < len(self.button)-1:
                  self.button[row][col].controlDown(self.button[row+1][0])
@@ -336,11 +336,15 @@ class MyClass(xbmcgui.Window):
 
 
   def updateEpg(self, control):
+   print "Got to updateEpg ............."
    if control != 0:
-     for row in range(rowsize): # changed from 8
-      for col in range(len(self.button[row])): # added
+     print "control != 0 "+str(control.getLabel())
+     for row in range(self.rowsize): # changed from 8
+      for col in range(len(self.button[row])): # added in updateEPG
 
+       print "testing r,c = "+str(row)+', '+str(col)
        if control == self.button[row][col]:
+        print "found control !!"
         name = control.getLabel()
         plot = self.pdata[row][col]['desc']
         self.current_plot.reset()
