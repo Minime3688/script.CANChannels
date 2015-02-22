@@ -10,8 +10,8 @@
             library="default.py">
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary>MyChannels</summary>
-    <description>MyChannels</description>
+    <summary>My Canadian Channels</summary>
+    <description>My Canadian Channels with EPG</description>
     <platform>all</platform>
   </extension>
 </addon>
