@@ -1,0 +1,20 @@
+{"epgs":[
+
+{"Name":"CANHalifax",
+"epgUrl":"http://www.zap2it.com/tvgrid/_xhr/schedule?time=&lineupid=CAN-0002090-DEFAULT&zip=B3H%201C2&searchId=",
+"urls":{ "CIHF"    :"http://link.theplatform.com/s/dtjsEC/77l1KA_G_5P1?feed=DEV%20Live%20Stream%20Feed"
+}},
+
+{"Name":"CANToronto",
+"epgUrl":"http://www.zap2it.com/tvgrid/_xhr/schedule?time=&lineupid=CAN-0005995-X&zip=M4C%201B5&searchId=",
+"urls":{ "CHFDDT"    :"http://link.theplatform.com/s/dtjsEC/hdSH3iztz_j_?feed=DEV%20Live%20Stream%20Feed",
+         "CHCHDT"    :"rtmp://54.85.197.21:1935/live/news timeout=10 live=1"
+}},
+
+{"Name":"CANVancouver",
+"epgUrl":"http://www.zap2it.com/tvgrid/_xhr/schedule?time=&lineupid=CAN-0009356-DEFAULT&zip=V6B%203Y6&searchId=",
+"urls":{ "CHAN"    :"http://link.theplatform.com/s/dtjsEC/EqBPGYLY6fEx?feed=DEV%20Live%20Stream%20Feed"
+}}
+
+
+ ]}
