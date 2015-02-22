@@ -56,9 +56,31 @@ def deuni(a):
     return a
 
 
+USER_AGENT    = 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36'
+defaultHeaders = {'User-Agent':USER_AGENT, 
+                 'Accept':"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8", 
+                 'Accept-Encoding':'gzip,deflate,sdch',
+                 'Accept-Language':'en-US,en;q=0.8'} 
 
-def getRequest(url, user_data=None, headers = {'User-Agent':USER_AGENT, 'Accept':"*/*", 
-                                                     'Accept-Encoding':'gzip,deflate,sdch', 'Accept-Language':'en-US,en;q=0.8'}  ):
+def getRequest(url, user_data=None, headers = defaultHeaders , alert=True):
+
+              log("getRequest URL:"+str(url))
+              if addon.getSetting('us_proxy_enable') == 'true':
+                  us_proxy = 'http://%s:%s' % (addon.getSetting('us_proxy'), addon.getSetting('us_proxy_port'))
+                  proxy_handler = urllib2.ProxyHandler({'http':us_proxy})
+                  if addon.getSetting('us_proxy_pass') <> '' and addon.getSetting('us_proxy_user') <> '':
+                      log('Using authenticated proxy: ' + us_proxy)
+                      password_mgr = urllib2.HTTPPasswordMgrWithDefaultRealm()
+                      password_mgr.add_password(None, us_proxy, addon.getSetting('us_proxy_user'), addon.getSetting('us_proxy_pass'))
+                      proxy_auth_handler = urllib2.ProxyBasicAuthHandler(password_mgr)
+                      opener = urllib2.build_opener(proxy_handler, proxy_auth_handler)
+                  else:
+                      log('Using proxy: ' + us_proxy)
+                      opener = urllib2.build_opener(proxy_handler)
+              else:   
+                  opener = urllib2.build_opener()
+              urllib2.install_opener(opener)
+
               log("getRequest URL:"+str(url))
               req = urllib2.Request(url.encode(UTF8), user_data, headers)
 
@@ -71,10 +93,14 @@ def getRequest(url, user_data=None, headers = {'User-Agent':USER_AGENT, 'Accept'
                     link1 = f.read()
                  else:
                     link1=response.read()
-              except:
+
+              except urllib2.URLError, e:
+                 if alert:
+                     xbmc.executebuiltin('XBMC.Notification("%s", "%s", %s)' % ( __addonname__, e , 10000) )
                  link1 = ""
 
-              link1 = str(link1).replace('\n','')
+              if not (str(url).endswith('.zip')):
+                 link1 = str(link1).replace('\n','')
               return(link1)
 
 

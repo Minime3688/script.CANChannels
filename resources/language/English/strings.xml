@@ -12,7 +12,7 @@
     <string id="30017">Canada/Saskatchewan</string>
     <string id="30018">Canada/Yukon</string>
     <string id="30019">GMT</string>
-    <string id="30020">GMT</string>
+    <string id="30020">CET</string>
     <string id="30021">US/Alaska</string>
     <string id="30022">US/Aleutian</string>
     <string id="30023">US/Arizona</string>
@@ -28,5 +28,12 @@
     <string id="30033">US/Samoa</string>
     <string id="30034">Japan</string>
     <string id="30035">Singapore</string>
+
+       <string id="30039">Proxy</string>
+       <string id="30040">Proxy IP</string>
+       <string id="30041">Port</string>
+       <string id="30042">Enable Proxy</string>
+       <string id="30043">User Name</string>
+       <string id="30044">Password</string>
 </strings>
 
