@@ -336,15 +336,11 @@ class MyClass(xbmcgui.Window):
 
 
   def updateEpg(self, control):
-   print "Got to updateEpg ............."
    if control != 0:
-     print "control != 0 "+str(control.getLabel())
      for row in range(self.rowsize): # changed from 8
       for col in range(len(self.button[row])): # added in updateEPG
 
-       print "testing r,c = "+str(row)+', '+str(col)
        if control == self.button[row][col]:
-        print "found control !!"
         name = control.getLabel()
         plot = self.pdata[row][col]['desc']
         self.current_plot.reset()
@@ -379,26 +375,20 @@ class MyClass(xbmcgui.Window):
          listitem.setInfo('video', {'Title': name, 'Plot': plot, 'Duration': duration, 'Genre': eptitle })
 
          try:
-           apass = False
            url = self.pdata[row][0]['url']
-           upar = urlparse(url)
-                  
-#           listitem.setProperty('mimetype', 'video/x-msvideo')
-           if (apass == False):
-#              self.player.play(url, listitem)
-#              xbmc.executebuiltin( "PlayMedia(%s ,1)" % (url) )
-              xbmc.Player(xbmc.PLAYER_CORE_AUTO).play(url, listitem)
+           xbmc.Player(xbmc.PLAYER_CORE_AUTO).play(url, listitem)
+           return
          except:
            log("MyChannels error parsing play url")
-           pass
+           return
+
 
  
 # Start of Module
-#try:
-if 1==1: 
+try:
      mydisplay = MyClass()
      mydisplay .doModal()
      del mydisplay
-#except:
-#     pass
+except:
+     pass
 
