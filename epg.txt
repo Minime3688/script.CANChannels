@@ -9,15 +9,31 @@
 }},
 
 {"Name":"CANToronto",
-"epgUrl":"http://www.zap2it.com/tvgrid/_xhr/schedule?time=&lineupid=CAN-0005995-X&zip=M4C%201B5&searchId=",
+"epgUrl":"http://www.zap2it.com/tvgrid/_xhr/schedule?time=&lineupid=CAN-0005995-X&zip=M4C%201B5&searchId=18168",
 "urls":{ "CHFDDT"    :"http://link.theplatform.com/s/dtjsEC/hdSH3iztz_j_?feed=DEV%20Live%20Stream%20Feed",
-         "CHCHDT"    :"rtmp://54.85.197.21:1935/live/news timeout=10 live=1"
+         "CHCHDT"    :"rtmp://54.85.197.21:1935/live/news timeout=10 live=1",
+         "CP24"      :"http://ams-lp3.9c9media.com/hls-live/livepkgr/_definst_/liveeventNoDRM/cp24Open8.m3u8"
 }},
 
 {"Name":"CANVancouver",
 "epgUrl":"http://www.zap2it.com/tvgrid/_xhr/schedule?time=&lineupid=CAN-0009356-DEFAULT&zip=V6B%203Y6&searchId=",
 "urls":{ "CHAN"    :"http://link.theplatform.com/s/dtjsEC/EqBPGYLY6fEx?feed=DEV%20Live%20Stream%20Feed"
+}},
+
+{"Name":"CANTSN",
+"epgUrl":"http://www.zap2it.com/tvgrid/_xhr/schedule?time=&lineupid=CAN-0002994-X&offset=30&count=20&zip=B3H%201C2&tz=US%2FEastern&searchId=",
+"urls":{ "TSN1"    :"http://ams-lp5.9c9media.com/hls-live/livepkgr/_definst_/liveeventNoDRM/tsnOpen8.m3u8",
+         "TSN2"    :"http://ams-lp7.9c9media.com/hls-live/livepkgr/_definst_/liveeventNoDRM/TSN2Open8.m3u8",
+         "TSN3"    :"http://ams-lp1.9c9media.com/hls-live/livepkgr/_definst_/liveeventNoDRM/TSN3Open8.m3u8",
+         "TSN4"    :"http://ams-lp2.9c9media.com/hls-live/livepkgr/_definst_/liveeventNoDRM/TSN4Open8.m3u8",
+         "TSN5"    :"http://ams-lp3.9c9media.com/hls-live/livepkgr/_definst_/liveeventNoDRM/TSN5Open8.m3u8"
+
+}},
+{"Name":"CANRDS",
+"epgUrl":"http://www.zap2it.com/tvgrid/_xhr/schedule?time=&lineupid=CAN-0002994-X&offset=400&count=20&zip=B3H%201C2&tz=US%2FEastern&searchId=",
+"urls":{ "RDS"    :"http://ams-lp9.9c9media.com/hls-live/livepkgr/_definst_/liveeventNoDRM/RDSOpen8.m3u8",
+         "RDS2"   :"http://ams-lp10.9c9media.com/hls-live/livepkgr/_definst_/liveeventNoDRM/RDS2Open8.m3u8",
+         "RDSI"   :"http://ams-lp11.9c9media.com/hls-live/livepkgr/_definst_/liveeventNoDRM/RDSiOpen8.m3u8"
 }}
 
-
- ]}
+]}
