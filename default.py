@@ -39,6 +39,7 @@ icon          = xbmc.translatePath(os.path.join(home, 'icon.png'))
 addonfanart   = xbmc.translatePath(os.path.join(home, 'fanart.jpg'))
 epgfile       = xbmc.translatePath(os.path.join(home, 'epg.txt'))
 tbarfile      = xbmc.translatePath(os.path.join(home, 'timebar.png'))
+background    = xbmc.translatePath(os.path.join(home, 'background.jpg'))
 
 
 def log(txt):
@@ -164,6 +165,8 @@ class MyClass(xbmcgui.Window):
 
     self.ctlList = []
     self.buttonList=[]
+
+    self.ctlList.append(xbmcgui.ControlImage(0,0,screen_width,screenHeight,background))
 
     self.current_page = 0
     self.rowsize = 0

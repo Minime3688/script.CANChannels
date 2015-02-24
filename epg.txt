@@ -2,7 +2,9 @@
 
 {"Name":"CANHalifax",
 "epgUrl":"http://www.zap2it.com/tvgrid/_xhr/schedule?time=&lineupid=CAN-0002090-DEFAULT&zip=B3H%201C2&searchId=",
-"urls":{ "CIHF"    :"http://link.theplatform.com/s/dtjsEC/77l1KA_G_5P1?feed=DEV%20Live%20Stream%20Feed"
+"urls":{ "CIHF"    :"http://link.theplatform.com/s/dtjsEC/77l1KA_G_5P1?feed=DEV%20Live%20Stream%20Feed",
+         "NEWSNET" :"http://ams-lp2.9c9media.com/hls-live/livepkgr/_definst_/liveeventNoDRM/ctvnewsOpen8.m3u8"
+
 }},
 
 {"Name":"CANToronto",
