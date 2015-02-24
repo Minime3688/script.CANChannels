@@ -382,7 +382,10 @@ class MyClass(xbmcgui.Window):
            if url.startswith('theplatform:'):
               url  = url.split(':',1)[1]
               html = getRequest(url)
-              url  = re.compile('<video src="(.+?)"').search(html).group(1)
+              try:
+                url  = re.compile('<video src="(.+?)"').search(html).group(1)
+              except:
+                url  = re.compile('<ref src="(.+?)"').search(html).group(1)
            xbmc.Player(xbmc.PLAYER_CORE_AUTO).play(url, listitem)
            return
          except:
