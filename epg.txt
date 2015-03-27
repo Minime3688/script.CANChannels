@@ -12,6 +12,7 @@
 "epgUrl":"http://www.zap2it.com/tvgrid/_xhr/schedule?time=&lineupid=CAN-0005995-X&zip=M4C%201B5&searchId=18168",
 "urls":{ "CHFDDT"    :"http://link.theplatform.com/s/dtjsEC/hdSH3iztz_j_?feed=DEV%20Live%20Stream%20Feed",
          "CHCHDT"    :"rtmp://54.85.197.21:1935/live/news timeout=10 live=1",
+         "Sportsnet”    :"http://nlds187.cdnak.neulion.com/nlds/sportsnetnow/sn_360/as/live/sn_360_hd_ipad.m3u8",
          "CP24"      :"http://ams-lp3.9c9media.com/hls-live/livepkgr/_definst_/liveeventNoDRM/cp24Open8.m3u8"
 }},
 
